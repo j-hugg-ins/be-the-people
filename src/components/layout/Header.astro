@@ -1,0 +1,20 @@
+---
+import Logo from "@/components/elements/Logo.astro";
+import Nav from "@/components/layout/Nav.astro";
+---
+
+<header class="header">
+        <Logo />
+        <Nav />
+</header>
+
+<style>
+
+    header {
+        display: grid;
+        grid-template-columns: max-content auto;
+        padding: var(--site-gutter) var(--site-gutter) 0;
+        min-height: var(--header-height);
+    }
+
+</style>

@@ -1,0 +1,52 @@
+---
+import { settings } from "@/settings";
+const year = new Date().getFullYear();
+---
+
+<footer>
+    <div class="footer-left">
+        <a href="" class="footer-link">Contact</a>
+        <a href="" class="footer-link">Privacy Policy</a>
+        <a href="" class="footer-link">Terms of Service</a>
+    </div>
+    <div class="footer-right">
+        <div class="footer-copyright">
+            {`v${__VERSION__}. © ${year}. ${settings.title}.`}
+        </div>
+    </div>
+</footer>
+
+<style>
+
+    footer {
+        display: grid;
+        grid-template-columns: auto max-content;
+        padding: 0 var(--site-gutter) var(--site-gutter);
+        min-height: var(--footer-height);
+        font-size: var(--font-size-reduced);
+    }
+
+    footer-link {
+        text-decoration: none;
+        color: var(--color-primary);
+        transition: color 0.3s ease;
+    }
+
+    footer-link:hover {
+        color: var(--color-accent);
+        transition: color 0.3s ease;
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+</style>
