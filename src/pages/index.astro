@@ -1,108 +1,39 @@
 ---
 import Master from "@/layout/Master.astro";
+import ModalForm from "@/components/elements/Form/ModalForm";
+import Ticker from "@/components/elements/Ticker/Ticker";
+import Button from "@/components/elements/Button/Button.astro";
 ---
 
 <Master title="Be the People" description="Join the movement for positive change">
+	
 	<section class="home-page">
-		<div class="hero">
-			<h1>Be the People</h1>
-			<p class="hero-text">A movement for positive change, bringing together supporters who believe in creating a better future.</p>
-			<div class="cta-buttons">
-				<a href="/supporters" class="cta-button primary">Join the Movement</a>
-				<a href="/supporters" class="cta-button secondary">See Supporters</a>
-			</div>
+		<div class="hero content-width">
+			<h1 class="hero-text">A movement for positive change, bringing together supporters who believe in creating a better future.</h1>
+			<Button
+				text="Join Us"
+				variant="primary"
+				id="signup-button"
+				size="large"
+			/>
 		</div>
 		
-		<div class="features">
-			<div class="feature">
-				<h3>Community Driven</h3>
-				<p>Join thousands of supporters who are committed to positive change in their communities.</p>
-			</div>
-			<div class="feature">
-				<h3>Transparent</h3>
-				<p>See who's supporting the movement with our public supporter list.</p>
-			</div>
-			<div class="feature">
-				<h3>Inclusive</h3>
-				<p>Everyone is welcome to join, regardless of background or affiliation.</p>
-			</div>
-		</div>
+		<!-- Expanded Supporter Ticker -->
+		<Ticker client:only="react" />
 	</section>
+
+	<!-- Modal Form -->
+	<ModalForm client:only="react" />
 </Master>
 
 <style>
-	.home-page {
-		display: grid;
-		gap: var(--gap-x-large);
-		width: 100%;
-		max-width: 100%;
-	}
-
 	.hero {
+		margin-block: 15vh var(--gap-large);
+		margin-inline: auto;
 		text-align: center;
-		padding: var(--gap-x-large) 0;
+		/* padding: var(--gap-x-large) 0; */
 	}
 
-	.hero h1 {
-		font-size: var(--header-size-large);
-		margin-bottom: var(--gap-medium);
-		color: var(--color-primary);
-	}
-
-	.hero-text {
-		font-size: var(--font-size-increased);
-		line-height: var(--font-line-height);
-		color: var(--color-knockback);
-		max-width: 600px;
-		margin: 0 auto var(--gap-large);
-	}
-
-	.cta-buttons {
-		display: flex;
-		gap: var(--gap-medium);
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	.cta-button {
-		padding: var(--button-padding);
-		border-radius: var(--border-radius);
-		font-size: var(--font-size);
-		font-weight: 600;
-		font-family: var(--font-family);
-		text-decoration: none;
-		transition: all 0.3s ease;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 160px;
-	}
-
-	.cta-button.primary {
-		background: var(--color-accent);
-		color: white;
-		border: 2px solid var(--color-accent);
-	}
-
-	.cta-button.primary:hover {
-		background: #e01e5a;
-		border-color: #e01e5a;
-		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(255, 36, 102, 0.3);
-	}
-
-	.cta-button.secondary {
-		background: transparent;
-		color: var(--color-primary);
-		border: 2px solid var(--color-primary);
-	}
-
-	.cta-button.secondary:hover {
-		background: var(--color-primary);
-		color: var(--color-secondary);
-		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(22, 22, 22, 0.2);
-	}
 
 	.features {
 		display: grid;
@@ -129,25 +60,23 @@ import Master from "@/layout/Master.astro";
 		line-height: var(--font-line-height);
 	}
 
+
+
 	/* Responsive Design */
 	@media (max-width: 768px) {
 		.hero {
-			padding: var(--gap-large) 0;
+			margin-block: var(--gap-small) var(--gap-medium);
+			padding: var(--gap-small) 0;
 		}
-		
-		.cta-buttons {
-			flex-direction: column;
-			align-items: center;
-		}
-		
-		.cta-button {
-			width: 100%;
-			max-width: 280px;
+
+		.hero h1 {
+			font-size: var(--header-size-large);
 		}
 		
 		.features {
 			grid-template-columns: 1fr;
 			gap: var(--gap-medium);
 		}
+
 	}
 </style>

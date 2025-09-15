@@ -1,0 +1,214 @@
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  /* padding: var(--gap-medium); */
+}
+
+.modal-content {
+  background: var(--color-primary);
+  border-radius: var(--border-radius);
+  padding: var(--gap-large);
+  width: 100%;
+  max-width: var(--copy-width);
+  max-height: 90vh;
+  max-height: 90dvh;
+  margin: var(--gap-small);
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom Scrollbar Styling */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--color-knockback);
+  border-radius: var(--border-radius);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: var(--border-radius);
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #e01e5a;
+}
+
+/* Firefox scrollbar styling */
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-knockback);
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--gap-small);
+  right: var(--gap-small);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-knockback);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: var(--color-accent);
+  color: var(--color-secondary);
+}
+
+.modal-form {
+  display: grid;
+  gap: var(--gap-small);
+}
+
+.form-group {
+  display: grid;
+  gap: var(--gap-xx-small);
+}
+
+.form-group label {
+  color: var(--color-secondary);
+  font-size: var(--font-size-reduced);
+}
+
+label[for="name"]::after,
+label[for="email"]::after {
+  content: " *";
+  color: var(--color-accent);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  padding: var(--input-padding);
+  border-radius: var(--border-radius);
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  border: none;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-knockback);
+  opacity: 0.7;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+  display: grid;
+  gap: var(--gap-x-small);
+  margin-top: var(--gap-small);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-x-small);
+  cursor: pointer;
+  font-size: var(--font-size-reduced);
+  line-height: 1.2em;
+  color: var(--color-secondary);
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--color-knockback);
+  border-radius: var(--border-radius);
+  background: var(--color-secondary);
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 0px;
+  transition: all 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+/* Button spacing in form */
+.modal-form .button {
+  margin-top: var(--gap-x-small);
+}
+
+/* Form Messages */
+.form-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--header-size-small);
+  font-family: var(--header-font-family);
+  min-height: 200px;
+  font-style: italic;
+}
+
+.form-message.success {
+  color: var(--color-secondary);
+}
+
+.form-message.error {
+  color: var(--color-error);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: var(--gap-medium);
+  }
+}

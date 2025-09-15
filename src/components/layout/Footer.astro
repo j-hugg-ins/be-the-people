@@ -24,6 +24,7 @@ const year = new Date().getFullYear();
         padding: 0 var(--site-gutter) var(--site-gutter);
         min-height: var(--footer-height);
         font-size: var(--font-size-reduced);
+        margin-top: var(--gap-medium);
     }
 
     footer-link {
@@ -40,7 +41,16 @@ const year = new Date().getFullYear();
     .footer-left {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    @media (min-width: 768px) {
+        .footer-left {
+            flex-direction: row;
+            gap: var(--gap-small);
+            align-items: flex-end;
+        }
     }
 
     .footer-right {

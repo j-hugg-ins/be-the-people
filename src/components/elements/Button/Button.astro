@@ -1,0 +1,39 @@
+---
+import type { ButtonProps } from '../../../types/button';
+import './Button.css';
+
+interface Props extends Omit<ButtonProps, 'onClick'> {
+  id?: string;
+  href?: string;
+  onClick?: string;
+}
+
+const { 
+  text, 
+  variant = 'primary', 
+  size = 'medium',
+  type = 'button',
+  disabled = false,
+  id,
+  href,
+  onClick,
+  children
+} = Astro.props;
+
+const isLink = href !== undefined;
+const Tag = isLink ? 'a' : 'button';
+const content = children || text;
+
+const tagProps = isLink 
+  ? { href } 
+  : { 
+      id, 
+      type, 
+      disabled, 
+      onclick: onClick 
+    };
+---
+
+<Tag class={`button ${variant} ${size}`} {...tagProps}>
+  {content}
+</Tag>

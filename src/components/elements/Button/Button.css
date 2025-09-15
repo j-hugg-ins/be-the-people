@@ -1,0 +1,52 @@
+.button {
+  border-radius: var(--border-radius);
+  font-family: var(--header-font-family);
+  font-style: italic;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: var(--button-padding);
+  color: var(--color-secondary);
+}
+
+/* Size variants */
+.button.small {
+  font-size: var(--font-size-reduced);
+  min-width: 120px;
+  height: calc(var(--input-height) + var(--gap-small));
+}
+
+.button.medium {
+  font-size: var(--font-size-increased);
+  min-width: calc(var(--gap-large) * 2);
+}
+
+.button.large {
+  font-size: var(--header-size-small);
+  min-width: calc(var(--gap-large) * 2.5);
+}
+
+.button.primary {
+  background: var(--color-accent);
+  color: #fff;
+  border: calc(var(--border-weight) * 2) solid var(--color-accent);
+}
+
+
+.button.secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: calc(var(--border-weight) * 2) solid var(--color-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .button {
+    width: 100%;
+    max-width: calc(var(--gap-large) * 3.5);
+  }
+}

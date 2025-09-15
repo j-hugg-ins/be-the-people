@@ -17,18 +17,14 @@ html {
 body {
     display: grid;
     grid-template-rows: min-content auto min-content;
-    gap: var(--gap-large);
     min-height: 100vh;
-    /* min-height: 100dvh; */
+    min-height: 100dvh;
     color: var(--color-primary);
 	background-color: var(--color-secondary);
 }
 
 main {
     display: grid;
-    padding-inline: var(--site-gutter);
-    width: min(100%, var(--site-width));
-    max-width: var(--site-width);
     margin: auto;
     height: 100%;
 }

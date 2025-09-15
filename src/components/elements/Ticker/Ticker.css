@@ -1,0 +1,81 @@
+/* Ticker Container */
+.expanded-ticker-container {
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+}
+
+.expanded-ticker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xx-small);
+}
+
+/* Ticker Rows */
+.ticker-row {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 60s linear infinite;
+  gap: var(--gap-small);
+  width: max-content;
+}
+
+/* Alternate row directions and speeds */
+.ticker-row:nth-child(even) {
+  animation-direction: reverse;
+  animation-duration: 70s;
+}
+
+.ticker-row:nth-child(3n) {
+  animation-duration: 80s;
+}
+
+/* Individual chips */
+.chip {
+  display: inline-block;
+  /* padding: var(--gap-small) var(--gap-medium); */
+  /* border-radius: 999px; */
+  background: var(--color-secondary);
+  /* border: 1px solid var(--color-knockback); */
+  font-family: var(--header-font-family);
+  font-style: italic;
+  font-size: var(--header-size-medium);
+  color: var(--color-primary);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Separator between chips */
+.separator {
+  color: var(--color-primary);
+  font-family: var(--header-font-family);
+  font-style: italic;
+  font-size: var(--header-size-medium);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  
+  .ticker-row {
+    animation-duration: 45s;
+  }
+  
+  .ticker-row:nth-child(even) {
+    animation-duration: 55s;
+  }
+  
+  .ticker-row:nth-child(3n) {
+    animation-duration: 65s;
+  }
+}
