@@ -20,7 +20,7 @@ CSS Variables */
     --gap-large: 4rem;
     --gap-x-large: 8rem;
 
-    --content-width: min(800px, 100%);
+    --content-width: min(900px, 100%);
     --copy-width: min(450px, 100%);
 
     /* Typography */

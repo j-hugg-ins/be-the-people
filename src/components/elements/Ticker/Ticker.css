@@ -14,19 +14,46 @@
 .ticker-row {
   display: flex;
   white-space: nowrap;
-  animation: scroll 60s linear infinite;
+  animation: scroll 86s linear infinite;
   gap: var(--gap-small);
   width: max-content;
 }
 
-/* Alternate row directions and speeds */
-.ticker-row:nth-child(even) {
-  animation-direction: reverse;
-  animation-duration: 70s;
+/* Unique speeds for each row */
+.ticker-row:nth-child(1) {
+  animation-duration: 86s;
 }
 
-.ticker-row:nth-child(3n) {
-  animation-duration: 80s;
+.ticker-row:nth-child(2) {
+  animation-direction: reverse;
+  animation-duration: 95s;
+}
+
+.ticker-row:nth-child(3) {
+  animation-duration: 108s;
+}
+
+.ticker-row:nth-child(4) {
+  animation-direction: reverse;
+  animation-duration: 92s;
+}
+
+.ticker-row:nth-child(5) {
+  animation-duration: 115s;
+}
+
+.ticker-row:nth-child(6) {
+  animation-direction: reverse;
+  animation-duration: 98s;
+}
+
+.ticker-row:nth-child(7) {
+  animation-duration: 105s;
+}
+
+.ticker-row:nth-child(8) {
+  animation-direction: reverse;
+  animation-duration: 88s;
 }
 
 /* Individual chips */
@@ -68,14 +95,43 @@
 @media (max-width: 768px) {
   
   .ticker-row {
-    animation-duration: 45s;
+    animation-duration: 64s;
   }
   
-  .ticker-row:nth-child(even) {
-    animation-duration: 55s;
+  /* Unique mobile speeds for each row */
+  .ticker-row:nth-child(1) {
+    animation-duration: 64s;
   }
   
-  .ticker-row:nth-child(3n) {
-    animation-duration: 65s;
+  .ticker-row:nth-child(2) {
+    animation-direction: reverse;
+    animation-duration: 71s;
+  }
+  
+  .ticker-row:nth-child(3) {
+    animation-duration: 81s;
+  }
+  
+  .ticker-row:nth-child(4) {
+    animation-direction: reverse;
+    animation-duration: 69s;
+  }
+  
+  .ticker-row:nth-child(5) {
+    animation-duration: 86s;
+  }
+  
+  .ticker-row:nth-child(6) {
+    animation-direction: reverse;
+    animation-duration: 73s;
+  }
+  
+  .ticker-row:nth-child(7) {
+    animation-duration: 79s;
+  }
+  
+  .ticker-row:nth-child(8) {
+    animation-direction: reverse;
+    animation-duration: 66s;
   }
 }

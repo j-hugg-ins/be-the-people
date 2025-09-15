@@ -9,13 +9,16 @@ import Button from "@/components/elements/Button/Button.astro";
 	
 	<section class="home-page">
 		<div class="hero content-width">
-			<h1 class="hero-text">A movement for positive change, bringing together supporters who believe in creating a better future.</h1>
+			<h1 class="hero-title">A national, cross-sector, nonpartisan movement of contribution and civic action.</h1>
+			<p class="hero-subtitle">From every corner of America, we are coming together, leaders like you, rallying around shared values and turning that common ground into action.</p>
+			<div class="hero-button">
 			<Button
 				text="Join Us"
 				variant="primary"
 				id="signup-button"
 				size="large"
 			/>
+			</div>
 		</div>
 		
 		<!-- Expanded Supporter Ticker -->
@@ -28,13 +31,25 @@ import Button from "@/components/elements/Button/Button.astro";
 
 <style>
 	.hero {
+		display: grid;
+		gap: var(--gap-medium);
 		margin-block: 15vh var(--gap-large);
 		margin-inline: auto;
 		text-align: center;
-		/* padding: var(--gap-x-large) 0; */
 	}
-
-
+	.hero-title {
+		font-size: var(--header-size-large);
+		margin-bottom: 0;
+		color: var(--color-primary);
+		text-wrap: balance;
+	}
+	.hero-subtitle {
+		font-size: var(--font-size-increased);
+		line-height: var(--font-line-height);
+		color: var(--color-knockback);
+		margin: 0 auto;
+		text-wrap: balance;
+	}
 	.features {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

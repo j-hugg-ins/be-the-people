@@ -86,7 +86,7 @@ const ModalForm: React.FC<ModalFormProps> = ({
       // Show success message
       setMessage({
         type: 'success',
-        text: 'Thank you for joining the movement! Your support has been recorded.'
+        text: 'Welcome To Be The People Founding Leaders.'
       });
       
       // Reset form
