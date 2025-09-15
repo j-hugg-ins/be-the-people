@@ -1,0 +1,21 @@
+---
+import Master from "@/layout/Master.astro";
+import SupporterTicker from "@/components/react/SupporterTicker";
+import SupporterForm from "@/components/react/SupporterForm";
+import "@/styles/supporter.css";
+---
+
+<Master title="Be the People - Supporters" description="Join the movement and see who's already supporting Be the People">
+	<section class="supporter-page">
+		<div class="hero">
+			<h1>Be the People</h1>
+			<p class="hero-text">Join thousands of supporters who believe in creating positive change. Add your voice to the movement.</p>
+		</div>
+
+		<!-- Scrolling Ticker -->
+		<SupporterTicker client:load />
+
+		<!-- Sign-up Form -->
+		<SupporterForm client:load />
+	</section>
+</Master>
