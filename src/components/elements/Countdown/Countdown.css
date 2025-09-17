@@ -1,0 +1,51 @@
+/* Basic countdown component styles - minimal styling for custom implementation */
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-accent);
+}
+
+.countdown-text {
+  font-family: var(--header-font-family);
+  /* font-style: italic; */
+  /* font-weight: 500; */
+  font-size: var(--font-size-reduced);
+  text-transform: uppercase;
+}
+
+.countdown-timer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--gap-x-small);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--gap-xx-small);
+}
+
+.countdown-value {
+  font-family: var(--header-font-family);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--header-size-small);
+}
+
+.countdown-label {
+  font-family: var(--header-font-family);
+  font-style: italic;
+  font-size: var(--font-size-increased);
+}
+
+.countdown-label {
+  /* Add your label styling here */
+}
+
+.countdown-expired {
+  /* Add your expired message styling here */
+}

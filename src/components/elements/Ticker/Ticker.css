@@ -56,6 +56,20 @@
   animation-duration: 88s;
 }
 
+.feedback {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.feedback-text {
+  font-family: var(--header-font-family);
+  font-style: italic;
+  font-size: var(--header-size-small);
+  color: var(--color-knockback);
+}
+
 /* Individual chips */
 .chip {
   display: inline-block;

@@ -3,6 +3,7 @@ import Master from "@/layout/Master.astro";
 import ModalForm from "@/components/elements/Form/ModalForm";
 import Ticker from "@/components/elements/Ticker/Ticker";
 import Button from "@/components/elements/Button/Button.astro";
+import Countdown from "@/components/elements/Countdown/Countdown";
 ---
 
 <Master title="Be the People" description="Join the movement for positive change">
@@ -19,10 +20,20 @@ import Button from "@/components/elements/Button/Button.astro";
 				size="large"
 			/>
 			</div>
+
+			<!-- Countdown -->
+			<a href="/mission">
+				<Countdown
+					targetDate="2026-07-04"
+					text="Learn more"
+					client:only="react"
+				/>
+			</a>
 		</div>
-		
-		<!-- Expanded Supporter Ticker -->
+
+		<!-- SupportersTicker -->
 		<Ticker client:only="react" />
+
 	</section>
 
 	<!-- Modal Form -->
@@ -30,11 +41,18 @@ import Button from "@/components/elements/Button/Button.astro";
 </Master>
 
 <style>
+
+	.home-page {
+		display: grid;
+		gap: var(--gap-medium);
+	}
+
 	.hero {
 		display: grid;
 		gap: var(--gap-medium);
-		margin-block: 15vh var(--gap-large);
+		margin-top: 10vh;
 		margin-inline: auto;
+		padding-inline: var(--site-gutter);
 		text-align: center;
 	}
 	.hero-title {
@@ -80,12 +98,11 @@ import Button from "@/components/elements/Button/Button.astro";
 	/* Responsive Design */
 	@media (max-width: 768px) {
 		.hero {
-			margin-block: var(--gap-small) var(--gap-medium);
-			padding: var(--gap-small) 0;
+			margin-top: var(--gap-small);
 		}
 
-		.hero h1 {
-			font-size: var(--header-size-large);
+		.hero-subtitle {
+			font-size: inherit;
 		}
 		
 		.features {

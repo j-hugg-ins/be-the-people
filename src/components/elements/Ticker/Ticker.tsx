@@ -61,24 +61,24 @@ const Ticker: React.FC<TickerProps> = ({
   const createTickerRows = () => {
     if (loading) {
       return (
-        <div className="ticker-row">
-          <span className="chip">Loading supporters...</span>
+        <div className="feedback">
+          <span className="feedback-text">Loading supporters...</span>
         </div>
       );
     }
 
     if (error) {
       return (
-        <div className="ticker-row">
-          <span className="chip">Supporters list temporarily unavailable</span>
+        <div className="feedback">
+          <span className="feedback-text">Supporters list temporarily unavailable</span>
         </div>
       );
     }
 
     if (supporters.length === 0) {
       return (
-        <div className="ticker-row">
-          <span className="chip">Be the first to join!</span>
+        <div className="feedback">
+          <span className="feedback-text">Be the first to join!</span>
         </div>
       );
     }

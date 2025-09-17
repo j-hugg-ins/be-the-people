@@ -1,0 +1,84 @@
+---
+import Master from "@/layout/Master.astro";
+import ModalForm from "@/components/elements/Form/ModalForm";
+import Button from "@/components/elements/Button/Button.astro";
+import Countdown from "@/components/elements/Countdown/Countdown";
+---
+
+<Master title="Be the People" description="Join the movement for positive change">
+	
+	<section class="mission-page">
+		
+			<h1 class="mission-title">July 4, 2026 is the 250th anniversary of the Declaration of Independence and the launch of the Be The People movement.</h1>
+
+			<Countdown
+                targetDate="2026-07-04"
+                client:only="react"
+            />
+
+            <div class="mission-text">
+                <p>America was founded on a radical idea: 'We the people...' But 'we the people' is more than just an idea. It's a call to action—a call answered every time Americans step up to solve problems, stand up to overcome differences, and show up to help each other in times of need.</p>
+                <p>Some say that's not who we are anymore — that we can't get big things done, that we're too divided, and that for some to get ahead others have to be left behind. Let's show them they're wrong. Let's show them that the things we do for each other are more powerful than anything that divides us. Let's show them what it means to be an American.</p>
+                <p>We want to hear stories about what's possible when people step up to solve problems, stand up to overcome differences, and show up to help others in times of need. Maybe it's volunteering to help people get back on their feet, coaching or mentoring to unlock the strength in others, starting a business to serve your community, stepping up in a time of crisis, bringing people together across divides, or simply being the person who goes the extra mile—at work, at home, or in your community.</p>
+                <p>If that's you, we hope you'll share your story with us. Because your story is the story of America. And it matters now more than ever. Tell us what you do and why you do it. Tell us how it has impacted you or changed the way you see the world. Tell us who has been affected by your work, and how. And tell us what you wish more people understood about the power they have to make a difference.</p>
+            </div>
+			<div class="mission-button">
+                <Button
+                    text="Join Us"
+                    variant="primary"
+                    id="signup-button"
+                    size="large"
+                />
+			</div>
+	</section>
+
+	<!-- Modal Form -->
+	<ModalForm client:only="react" />
+
+</Master>
+
+<style>
+
+    .mission-page {
+        display: grid;
+        gap: var(--gap-medium);
+        margin-inline: auto;
+        margin-block: 10vh var(--gap-large);
+        padding-inline: var(--site-gutter);
+        padding-top: var(--gap-medium);
+        max-width: var(--content-width);
+    }
+
+    .mission-title {
+        font-size: var(--header-size-large);
+        margin-bottom: 0;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .mission-button {
+        text-align: center;
+    }
+
+    .mission-text {
+        text-wrap: pretty;
+        margin-inline: auto;
+        columns: 2;
+    }
+
+    .mission-text p {
+        margin-bottom: var(--gap-small);
+    }
+
+    @media (max-width: 768px) {
+
+        .mission-page {
+            margin-block: var(--gap-small);
+        }
+
+        .mission-text {
+            columns: 1;
+        }
+    }
+
+</style>
