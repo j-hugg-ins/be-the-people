@@ -198,7 +198,7 @@ const ModalForm: React.FC<ModalFormProps> = ({
               name="excitement"
               value={formData.excitement}
               onChange={handleInputChange}
-              placeholder="Share what inspires you about this movement..."
+              placeholder="Share what inspires you about this movement or tell us your story."
               rows={4}
             />
           </div>
