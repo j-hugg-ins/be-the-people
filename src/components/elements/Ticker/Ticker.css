@@ -7,7 +7,6 @@
 .expanded-ticker {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xx-small);
 }
 
 /* Ticker Rows */
@@ -73,15 +72,11 @@
 /* Individual chips */
 .chip {
   display: inline-block;
-  /* padding: var(--gap-small) var(--gap-medium); */
-  /* border-radius: 999px; */
   background: var(--color-secondary);
-  /* border: 1px solid var(--color-knockback); */
   font-family: var(--header-font-family);
   font-style: italic;
-  font-size: var(--header-size-medium);
+  font-size: var(--font-size-increased);
   color: var(--color-primary);
-  font-weight: 500;
   flex-shrink: 0;
 }
 
@@ -90,8 +85,7 @@
   color: var(--color-primary);
   font-family: var(--header-font-family);
   font-style: italic;
-  font-size: var(--header-size-medium);
-  font-weight: 500;
+  font-size: var(--font-size-increased);
   flex-shrink: 0;
 }
 

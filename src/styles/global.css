@@ -14,12 +14,6 @@ html {
     margin: 0;
 }
 
-@media (max-width: 768px) {
-    html {
-        font-size: var(--font-size-reduced);
-    }
-}
-
 body {
     display: grid;
     grid-template-rows: min-content auto min-content;
